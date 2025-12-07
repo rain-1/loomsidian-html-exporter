@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Loom Viewer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="viewer-page">
+    <div class="app-container">
+        <aside id="sidebar" class="sidebar">
+            <header class="sidebar-header">
+                <a href="index.html" class="back-link">← Index</a>
+                <h1 class="doc-title">{{ title }}</h1>
+            </header>
+            <div id="tree-view" class="tree-container">
+                <!-- Tree will be rendered here -->
+            </div>
+        </aside>
+
+        <div id="resizer" class="resizer"></div>
+
+        <main id="main" class="main-reader">
+            <div id="reader-view" class="reader-content">
+                <!-- Continuous text will be rendered here -->
+            </div>
+            <div id="choices-view" class="choices-container">
+                <!-- Choices will be rendered here -->
+            </div>
+        </main>
+    </div>
+
+    <script>
+        window.DOC_DATA = {{ doc_data_json }};
+    </script>
+    <script src="viewer.js"></script>
+</body>
+
+</html>
